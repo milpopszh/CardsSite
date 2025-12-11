@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Коллекционные карточки - MangaSite</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/manga.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">MangaSite</a>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html">Главная</a>
+                <a href="cards.html">Карточки</a>
+                <a href="users.html">Сообщество</a>
+                <a href="profile.html" id="profile-link">Профиль</a>
+                <a href="login.html" id="login-link">Войти</a>
+                <a href="register.html" id="register-link">Регистрация</a>
+                <a href="admin.html" id="admin-link" style="display:none">Админ</a>
+                <button id="logout-btn" style="display:none">Выйти</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="manga-header">
+            <h1>Коллекционные карточки</h1>
+            <p>Собирайте карточки с любимыми персонажами</p>
+        </section>
+
+        <section class="manga-filters">
+            <div class="filter-group">
+                <select id="manga-filter" class="filter-select">
+                    <option value="">Все манги</option>
+                </select>
+
+                <select id="rarity-filter" class="filter-select">
+                    <option value="">Все редкости</option>
+                    <option value="common">Обычная</option>
+                    <option value="rare">Редкая</option>
+                    <option value="epic">Эпическая</option>
+                    <option value="legendary">Легендарная</option>
+                </select>
+
+                <input type="text" id="card-search" class="form-input" placeholder="Поиск карточек..." style="width: 200px;">
+
+                <button id="apply-card-filters" class="form-button">Применить</button>
+                <button id="reset-card-filters" class="form-button form-button-danger">Сбросить</button>
+            </div>
+        </section>
+
+        <section class="cards-collection">
+            <div class="collection-stats">
+                <div class="stat-card">
+                    <h3>Всего карточек</h3>
+                    <span id="total-cards">0</span>
+                </div>
+                <div class="stat-card">
+                    <h3>В вашей коллекции</h3>
+                    <span id="user-cards">0</span>
+                </div>
+                <div class="stat-card">
+                    <h3>Уникальные</h3>
+                    <span id="unique-cards">0</span>
+                </div>
+            </div>
+
+            <div class="cards-grid" id="cards-grid">
+                <!-- Карточки будут здесь -->
+            </div>
+
+            <div class="pagination" id="cards-pagination">
+                <!-- Пагинация для карточек -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Модальное окно просмотра карточки -->
+    <div id="card-modal" class="modal" style="display: none;">
+        <div class="modal-content" style="max-width: 400px;">
+            <span class="close">&times;</span>
+            <div id="card-modal-content">
+                <!-- Контент карточки будет здесь -->
+            </div>
+        </div>
+    </div>
+
+    <script src="js/components.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/cards.js"></script>
+</body>
+</html>
