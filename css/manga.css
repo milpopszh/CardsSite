@@ -1,0 +1,190 @@
+/* Стили для манги - ШИРОКИЙ ФОРМАТ */
+.manga-header {
+    text-align: center;
+    padding: 2rem 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.manga-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.manga-results {
+    margin-top: 2rem;
+}
+
+.results-info {
+    margin-bottom: 1rem;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+}
+
+/* Сетка для манги на странице каталога */
+.manga-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Карточка манги - ШИРОКИЙ ФОРМАТ */
+.manga-card {
+    background: white;
+    border-radius: 6px; /* Меньше скругления */
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.manga-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+.manga-card-image {
+    width: 100%;
+    height: 320px; /* Выше и шире */
+    object-fit: cover;
+    display: block;
+}
+
+.manga-card-content {
+    padding: 1rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 120px;
+}
+
+.manga-card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
+    line-height: 1.3;
+    min-height: 2.6rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.manga-card-author {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    margin-bottom: 0.5rem;
+}
+
+.manga-card-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+    font-size: 0.8rem;
+    color: #95a5a6;
+}
+
+.manga-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.manga-card-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-top: auto;
+}
+
+.manga-card-tag {
+    background: #3498db;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    border-radius: 8px; /* Меньше скругления у тегов */
+    font-size: 0.7rem;
+    font-weight: bold;
+}
+
+/* Для главной страницы - ШИРОКИЙ ФОРМАТ */
+.featured-manga-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); /* Шире */
+    gap: 1.2rem;
+    margin-top: 1rem;
+}
+
+.featured-manga-grid .manga-card {
+    height: auto;
+}
+
+.featured-manga-grid .manga-card-image {
+    height: 280px; /* Выше для главной */
+}
+
+.featured-manga-grid .manga-card-content {
+    min-height: 110px;
+    padding: 0.8rem;
+}
+
+.featured-manga-grid .manga-card-title {
+    font-size: 1rem;
+    min-height: 2.4rem;
+}
+
+.featured-manga-grid .manga-card-author {
+    font-size: 0.8rem;
+}
+
+.featured-manga-grid .manga-card-stats {
+    font-size: 0.75rem;
+}
+
+.featured-manga-grid .manga-card-tag {
+    font-size: 0.65rem;
+    padding: 0.15rem 0.4rem;
+    border-radius: 6px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .reader-controls .control-group {
+        flex-direction: column;
+    }
+
+    .control-group button,
+    .control-group select {
+        width: 100%;
+    }
+
+    .manga-pages {
+        padding: 1rem;
+    }
+
+    .manga-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .featured-manga-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 1rem;
+    }
+
+    .featured-manga-grid .manga-card-image {
+        height: 220px;
+    }
+
+    .featured-manga-grid .manga-card-content {
+        min-height: 100px;
+        padding: 0.6rem;
+    }
+
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CardsSite - Главная</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/cards.css">
+    <link rel="stylesheet" href="css/manga.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">CardsSite</a>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html">Главная</a>
+                <a href="manga.html">Манга</a>
+                <a href="cards.html">Карточки</a>
+                <a href="users.html">Сообщество</a>
+                <a href="profile.html" id="profile-link">Профиль</a>
+                <a href="login.html" id="login-link">Войти</a>
+                <a href="register.html" id="register-link">Регистрация</a>
+                <a href="admin.html" id="admin-link" style="display:none">Админ</a>
+                <button id="logout-btn" style="display:none">Выйти</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero">
+            <h1>Добро пожаловать в мир коллекционирования</h1>
+            <p>Собирайте карточки и общайтесь с фанатами</p>
+        </section>
+
+        <section class="featured-manga">
+            <h2>Популярная манга</h2>
+            <!-- ИСПРАВИЛ: добавил ID -->
+            <div class="featured-manga-grid" id="featured-manga">
+                <!-- Карточки манги будут здесь -->
+            </div>
+        </section>
+
+        <section class="recent-cards">
+            <h2>Новые карточки</h2>
+            <!-- ИСПРАВИЛ: добавил ID -->
+            <div class="featured-cards-grid" id="recent-cards">
+                <!-- Карточки персонажей будут здесь -->
+            </div>
+        </section>
+    </main>
+
+    <script src="js/utils.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+/* Стили для карточек - ОБНОВЛЕННАЯ ВЕРСИЯ С БОЛЬШИМ КОЛИЧЕСТВОМ В РЯДУ */
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+    position: relative;
+    border: 4px solid #95a5a6; /* Рамка по умолчанию (серая) */
+    width: 180px; /* Уменьшили ширину для большего количества в ряду */
+    height: 250px; /* Соответствующая высота */
+    margin: 0 auto; /* Центрирование */
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Рамки для разных редкостей */
+.card-rarity-common {
+    border-color: #95a5a6; /* Серая */
+}
+
+.card-rarity-rare {
+    border-color: #8B4513; /* Бордовая/коричневая */
+}
+
+.card-rarity-epic {
+    border-color: #8A2BE2; /* Фиолетовая */
+}
+
+.card-rarity-legendary {
+    border-color: #00BFFF; /* Лазурная */
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Буква редкости поверх картинки */
+.rarity-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1rem;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 2;
+}
+
+.rarity-common { background: #95a5a6; } /* Серая */
+.rarity-rare { background: #8B4513; } /* Бордовая */
+.rarity-epic { background: #8A2BE2; } /* Фиолетовая */
+.rarity-legendary { background: #00BFFF; } /* Лазурная */
+
+/* Информация поверх картинки */
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    color: white;
+    padding: 1rem 0.5rem 0.5rem;
+    z-index: 1;
+}
+
+.card-overlay-title {
+    font-size: 1rem;
+    font-weight: bold;
+    margin-bottom: 0.2rem;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    line-height: 1.2;
+}
+
+.card-overlay-subtitle {
+    font-size: 0.8rem;
+    text-align: center;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Статус карточки в коллекции */
+.card-owned, .card-missing {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 0.2rem 0.5rem;
+    border-radius: 10px;
+    font-size: 0.6rem;
+    font-weight: bold;
+    z-index: 2;
+}
+
+.card-owned {
+    background: #27ae60;
+    color: white;
+}
+
+.card-missing {
+    background: #e74c3c;
+    color: white;
+}
+
+/* Разные размеры карточек */
+.card-small {
+    width: 150px;
+    height: 210px;
+}
+
+.card-medium {
+    width: 180px;
+    height: 250px;
+}
+
+.card-large {
+    width: 220px;
+    height: 310px;
+}
+
+/* Для коллекционных карточек */
+.card-collectible {
+    position: relative;
+}
+
+/* Сетка карточек с большим количеством в ряду */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+    justify-items: center; /* Центрируем карточки в ячейках */
+}
+
+/* Для главной страницы - еще больше карточек в ряду */
+.featured-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.2rem;
+    margin-top: 1rem;
+    justify-items: center;
+}
+
+/* Специальные стили для админских карточек */
+.admin-card {
+    width: 160px !important;
+    height: 220px !important;
+    margin: 0 !important;
+}
+
+.admin-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute !important;
+}
+
+.admin-card .card-overlay {
+    padding: 0.8rem 0.3rem 0.3rem;
+}
+
+.admin-card .card-overlay-title {
+    font-size: 0.9rem;
+}
+
+.admin-card .card-overlay-subtitle {
+    font-size: 0.7rem;
+}
+
+.admin-card-actions {
+    position: absolute;
+    bottom: 5px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    z-index: 3;
+}
+
+.admin-card-actions button {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.7rem;
+    margin: 0.2rem;
+}
+
+/* Стили для карточек в профиле */
+.profile-section .cards-grid {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
