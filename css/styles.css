@@ -151,30 +151,77 @@ body {
     text-align: center;
     padding: 4rem 2rem;
     margin: 2rem 0;
-    background: linear-gradient(135deg, rgba(255, 216, 204, 0.2), rgba(202, 240, 248, 0.2));
+    background: linear-gradient(135deg,
+        rgba(255, 240, 235, 0.9) 0%,
+        rgba(230, 240, 255, 0.9) 100%);
     border-radius: 30px;
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px var(--pastel-shadow);
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    box-shadow: 0 8px 32px rgba(141, 133, 166, 0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Декоративный элемент для фона */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle,
+        rgba(226, 208, 249, 0.3) 0%,
+        rgba(226, 208, 249, 0) 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle,
+        rgba(202, 240, 248, 0.3) 0%,
+        rgba(202, 240, 248, 0) 70%);
+    border-radius: 50%;
+    z-index: 0;
 }
 
 .hero h1 {
     font-size: 3rem;
-    margin-bottom: 1rem;
-    color: var(--pastel-text);
-    background: linear-gradient(45deg, #e2d0f9, #caf0f8);
+    margin-bottom: 1.5rem;
+    color: #4a4458;
+    position: relative;
+    z-index: 1;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.8);
+    line-height: 1.2;
+    background: linear-gradient(45deg,
+        #5d4a9d 0%,
+        #3c7a89 50%,
+        #a36a5d 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
 .hero p {
-    font-size: 1.2rem;
-    color: var(--pastel-text-light);
+    font-size: 1.3rem;
+    color: #6a6378;
     max-width: 600px;
     margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    font-weight: 500;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 1rem 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(141, 133, 166, 0.1);
+    backdrop-filter: blur(5px);
 }
-
 /* ===== СЕКЦИЯ КАРТОЧЕК ===== */
 .recent-cards {
     margin-top: 4rem;
