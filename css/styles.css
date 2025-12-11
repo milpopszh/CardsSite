@@ -1,50 +1,113 @@
-<!doctype html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CardsSite - Главная</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/cards.css">
-    <link rel="stylesheet" href="css/manga.css">
-</head>
-<body>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">CardsSite</a>
-            </div>
-            <div class="nav-menu">
-                <a href="index.html">Главная</a>
-                <a href="manga.html">Манга</a>
-                <a href="cards.html">Карточки</a>
-                <a href="users.html">Сообщество</a>
-                <a href="profile.html" id="profile-link">Профиль</a>
-                <a href="login.html" id="login-link">Войти</a>
-                <a href="register.html" id="register-link">Регистрация</a>
-                <a href="admin.html" id="admin-link" style="display:none">Админ</a>
-                <button id="logout-btn" style="display:none">Выйти</button>
-            </div>
-        </div>
-    </nav>
+/* Базовые стили */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <main class="main-content">
-        <section class="hero">
-            <h1>Добро пожаловать в мир коллекционирования</h1>
-            <p>Собирайте карточки и общайтесь с другими фанатами</p>
-        </section>
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
 
-        <section class="recent-cards">
-            <h2>Новые карточки</h2>
-            <!-- ИСПРАВИЛ: добавил ID -->
-            <div class="featured-cards-grid" id="recent-cards">
-                <!-- Карточки персонажей будут здесь -->
-            </div>
-        </section>
-    </main>
+/* Навигация */
+.navbar {
+    background: #2c3e50;
+    color: white;
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
 
-    <script src="js/utils.js"></script>
-    <script src="js/components.js"></script>
-    <script src="js/app.js"></script>
-</body>
-</html>
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 2rem;
+}
+
+.nav-logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.nav-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.nav-menu a:hover {
+    background-color: #34495e;
+}
+
+/* Основной контент */
+.main-content {
+    max-width: 1200px;
+    margin: 80px auto 2rem;
+    padding: 0 2rem;
+}
+
+.hero {
+    text-align: center;
+    padding: 3rem 0;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+/* Сетка карточек */
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .nav-menu {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .main-content {
+        margin-top: 120px;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .nav-menu a.active {
+        background-color: #3498db;
+        color: white;
+    }
+}
